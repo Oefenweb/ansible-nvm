@@ -9,3 +9,6 @@
       nvm_version: 'v0.40.1'
     - role: ../../
       nvm_user: vagrant
+  post_tasks:
+    - name: include tasks
+      ansible.builtin.import_tasks: "{{ playbook_dir }}/tasks/post.yml"

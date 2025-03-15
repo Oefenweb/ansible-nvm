@@ -28,7 +28,7 @@
     - nvm
     - nvm-install
   become: true
-  become_user: "{{ nvm_user | default('root') }}"
+  become_user: "{{ nvm_user }}"
   block:
     - name: install | nvm | get current version  # noqa command-instead-of-module
       ansible.builtin.shell: >
@@ -41,7 +41,9 @@
 
     - name: install | nvm | install given version  # noqa command-instead-of-module risky-shell-pipe
       ansible.builtin.shell: >
-        curl -sSL https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh | bash -
+        curl -sSL https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh | {{ nvm_shell }} -
+      args:
+        executable: "{{ nvm_shell }}"
       environment:
         PROFILE: /dev/null
       changed_when: true

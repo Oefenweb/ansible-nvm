@@ -14,6 +14,8 @@ Set up Node Version Manager ([nvm](https://github.com/nvm-sh/nvm)) in Debian-lik
 
 * `nvm_version` [default: `v0.40.2`]: Version to install
 * `nvm_install` [default: `[]`]: (Additional) packages to install (e.g. `build-essential`, `libssl-dev`)
+* `nvm_user` [default: `root`]: The user to install nvm for (you want this to be something different than `root`)
+* `nvm_shell` [default: `/bin/bash`]: The shell to use to install nvm (changing this to something different is not tested (yet))
 
 ## Dependencies
 
