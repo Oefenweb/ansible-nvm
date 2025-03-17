@@ -23,6 +23,8 @@ None
 
 ## Recommended
 
+* `ansible-bash` ([see](https://github.com/Oefenweb/ansible-bash))
+
 #### Example
 
 ```yaml
